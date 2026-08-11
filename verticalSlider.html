@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            margin: 0;
+        }
+        .container{
+            height: 2500px;
+            display: flex;
+            flex-direction: column;
+            background-image: linear-gradient(to bottom, #000000, #434343, #666666, #999999, #cccccc);
+        }
+        .box{
+            background-color: black;
+            height: 500px;
+            width: 500px;
+            margin: 20px auto;
+            border:2px solid black;
+            border-radius: 20px;
+        }
+        .box img{
+            height: 100%;
+            width:100%;
+            object-fit: cover;
+        }
+        .grads{
+            height: 100px;
+            width: 100px;
+            margin: 20px auto;
+            border:2px solid black;
+            border-radius: 50px;
+            background-image: linear-gradient(to bottom, #000000, #434343, #666666, #999999, #cccccc);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="grads" style="position: fixed;left:0;top:0;"></div>
+    <div class="grads" style="position: fixed;right:0;top:0;"></div>
+    <div></div>
+    <div class="container">
+        <div class="box" style="position: sticky;top:100px;"><img src="image1.jpg"></div>
+        <div class="box" style="position: sticky;top:100px;"><img src="image2.jpg"></div>
+        <div class="box" style="position: sticky;top:100px;"><img src="image3.jpg"></div>
+        <div class="box" style="position: sticky;top:100px;"><img src="image4.jpg"></div>
+    </div>
+    <div class="grads" style="position: fixed;left:0;bottom:0;"></div>
+    <div class="grads" style="position: fixed;right:0;bottom:0;"></div>
+</body>
+</html>
