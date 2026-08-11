@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            position: relative;
+            min-height: 220vh;
+            padding: 20px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+            background-color: yellow;
+        }
+
+        .relative {
+            position: relative;
+            top: 20px;
+            left: 30px;
+            background: #90caf9;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ffcc80;
+        }
+
+        .sticky {
+            position: sticky;
+            top: 10px;
+            background: #a5d6a7;
+        }
+
+        .fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #f48fb1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box relative">Relative</div>
+        <div class="box absolute">Absolute</div>
+        <div class="box sticky">Sticky</div>
+        <div class="box">Normal</div>
+        <div class="box">Normal</div>
+        <div class="box">Normal</div>
+        <div class="box">Normal</div>
+        <div class="box fixed">Fixed</div>
+    </div>
+</body>
+</html>
