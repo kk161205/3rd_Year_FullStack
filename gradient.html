@@ -5,13 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            background-image: linear-gradient(to right, red, yellow);
+        *{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: black;
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .power{
+            height: 500px;
+            width:500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: grey;
+            border-radius: 20%;
+            border: 20px solid transparent;
+            background: linear-gradient(grey, grey) padding-box, linear-gradient(to right, red, yellow, green) border-box;
+        }
+        .gauge{
+            height:300px;
+            width:300px;
+            background-image: conic-gradient(blue, darkblue 180deg, black 180deg 360deg);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+        .value{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            background-color: grey;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+        }
+        h1, p{
+            background: linear-gradient(red, white);
+            background-clip: text;
+            color:transparent;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
+    <div class="power">
+        <div class="gauge">
+            <div class="value">
+                <h1>50%</h1>
+                <p>POWER</p>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
 </body>
 </html>

@@ -5,51 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            background-color: black;
+        *{
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container{
-            height: 2500px;
-            display: flex;
-            flex-direction: column;
-            background-image: linear-gradient(to bottom, #000000, #434343, #666666, #999999, #cccccc);
+        body{
+            min-height: 100vh;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
         }
-        .box{
-            background-color: black;
-            height: 500px;
-            width: 500px;
-            margin: 20px auto;
-            border:2px solid black;
-            border-radius: 20px;
+        .background-wrap{
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            z-index: 0;
         }
-        .box img{
+        .background-video{
+            width: 100%;
             height: 100%;
-            width:100%;
             object-fit: cover;
+            filter: brightness(1.05);
+            display: block;
         }
-        .grads{
-            height: 100px;
-            width: 100px;
-            margin: 20px auto;
-            border:2px solid black;
-            border-radius: 50px;
-            background-image: linear-gradient(to bottom, #000000, #434343, #666666, #999999, #cccccc);
-            
+        .overlay{
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.25);
+        }
+        .page-content{
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 0 60px;
+        }
+        .text-box{
+            max-width: 620px;
+            background: rgba(0, 0, 0, 0.45);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        .text-box h1{
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        .text-box p{
+            line-height: 1.6;
+            color: #ddd;
+        }
+        .scroll-slider{
+            width: 100%;
+            margin: 0 auto;
+            padding-top: 10px;
+            padding-bottom: 140px;
+        }
+        .slide{
+            width: 100%;
+            height: min(82vh, 760px);
+            position: sticky;
+            top: 24px;
+            margin-bottom: 64px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+        }
+        .slide:nth-child(1){
+            z-index: 1;
+        }
+        .slide:nth-child(2){
+            z-index: 2;
+        }
+        .slide:nth-child(3){
+            z-index: 3;
+        }
+        .slide:nth-child(4){
+            z-index: 4;
+        }
+        .slide img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        @media (max-width: 900px){
+            .text-box{
+                width: 100%;
+            }
+            .slide{
+                height: min(76vh, 640px);
+            }
+        }
+        @media (max-width: 480px){
+            .text-box h1{
+                font-size: 34px;
+            }
+            .slide{
+                height: 420px;
+                margin-bottom: 48px;
+            }
+            .scroll-slider{
+                padding-bottom: 100px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="grads" style="position: fixed;left:0;top:0;"></div>
-    <div class="grads" style="position: fixed;right:0;top:0;"></div>
-    <div></div>
-    <div class="container">
-        <div class="box" style="position: sticky;top:100px;"><img src="image1.jpg"></div>
-        <div class="box" style="position: sticky;top:100px;"><img src="image2.jpg"></div>
-        <div class="box" style="position: sticky;top:100px;"><img src="image3.jpg"></div>
-        <div class="box" style="position: sticky;top:100px;"><img src="image4.jpg"></div>
+    <div class="background-wrap">
+        <video autoplay muted loop playsinline preload="auto" class="background-video">
+            <source src="YTDown.com_YouTube_Black-Clover-Opening-13-4K_Media_H0ubZknSVMI_002_720p.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
     </div>
-    <div class="grads" style="position: fixed;left:0;bottom:0;"></div>
-    <div class="grads" style="position: fixed;right:0;bottom:0;"></div>
+
+    <main class="page-content">
+        <section class="text-box">
+            <h1>Magic never fades.</h1>
+            <p>
+                A simple image-by-image vertical slider with a sticky Black Clover background.
+            </p>
+        </section>
+
+        <section class="scroll-slider" aria-label="Black Clover image slider">
+            <div class="slide">
+                <img src="anime1.jpeg" alt="Black Clover image 1">
+            </div>
+            <div class="slide">
+                <img src="anime2.jpeg" alt="Black Clover image 2">
+            </div>
+            <div class="slide">
+                <img src="anime3.jpeg" alt="Black Clover image 3">
+            </div>
+            <div class="slide">
+                <img src="anime5.jpeg" alt="Black Clover image 5">
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>
