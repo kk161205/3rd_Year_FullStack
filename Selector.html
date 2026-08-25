@@ -32,16 +32,40 @@
             color: white;
         }
 
-        h3, p{
-            color: blueviolet;
-            background-color: lightblue;
+        div h3{
+            text-shadow: 1px 1px 0 black;
         }
+
+        div>h3{
+            text-transform: lowercase;
+        }
+
+        h3+p{
+            color:tomato;
+        }
+
+        h3~p{
+            text-transform: uppercase;
+        }
+
+        .hi{
+            background-color: aqua;
+            
+        }
+        #hello{
+            background-color:aquamarine;
+        }
+        input{
+            background-color: bisque;
+        }
+
     </style>
 </head>
 <body>
     <div>
         <h3>Heading</h3>
         <p>para1</p>
+        <p>para2</p>
     </div>
     <h2>Selectors</h2>
     <ul>
@@ -57,6 +81,6 @@
 
     <input type="email" placeholder="Email">
     <br>
-    <input type="password" placeholder="Password">
+    <input id="hello" class="hi" type="password" placeholder="Password" style="background-color: brown;">
 </body>
 </html>
