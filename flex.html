@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            flex-wrap: wrap;
+        }
+        .one{
+            flex:3;
+            height: 100px;
+            min-width: 300px;
+            background-color: red;
+        }
+        .two{
+            flex:1;
+            height: 100px;
+            background-color: green;
+            min-width: 100px;
+        }
+        .three{
+            flex:1;
+            height: 100px;
+            min-width: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+    </div>
+</body>
+</html>
