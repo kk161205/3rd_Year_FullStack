@@ -37,6 +37,15 @@
         input:out-of-range{
             background-color: red;
         }
+        input:read-only{
+            border-width: 0px;
+            box-shadow: 0 0 0 transparent;
+            background-color: grey;
+            color: white;
+        }
+        input:focus{
+            box-shadow: 0 0 15px black;
+        }
     </style>
 </head>
 <body>
@@ -46,5 +55,6 @@
     <input type="text" placeholder="Gender" disabled/>
     <input type="email" placeholder="Email Address"/>
     <input type="number" min="10" max="100" placeholder="Age"/>
+    <input type="text" value="Mr." readonly/>
 </body>
 </html>
