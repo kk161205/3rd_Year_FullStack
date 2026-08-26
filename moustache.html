@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Gentleman Face & Mustache in Pure CSS</title>
+    <style>
+        :root {
+            --skin-base: #f7cbaf;
+            --skin-shadow: #e09e7c;
+            --skin-highlight: #ffebd9;
+            --hair-dark: #1b120c;
+            --hair-mid: #3a261a;
+            --hair-light: #5c3c28;
+            --eye-color: #4a7558;
+            --glasses-rim: #c59b4c;
+            --mustache-color: #2b1c13;
+            --suit-color: #1e293b;
+            --collar-color: #f8fafc;
+            --tie-color: #991b1b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #233142 0%, #0d131a 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Portrait Canvas Frame */
+        .portrait-container {
+            position: relative;
+            width: 440px;
+            height: 580px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Ambient Glow */
+        .portrait-container::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(218, 165, 32, 0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 0;
+        }
+
+        /* Neck */
+        .neck {
+            position: absolute;
+            top: 340px;
+            width: 124px;
+            height: 110px;
+            background: linear-gradient(to right, var(--skin-shadow), var(--skin-base) 35%, var(--skin-shadow) 90%);
+            border-radius: 0 0 20px 20px;
+            z-index: 1;
+        }
+
+        .neck::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 22px;
+            width: 80px;
+            height: 45px;
+            background: rgba(0, 0, 0, 0.12);
+            border-radius: 0 0 50% 50%;
+        }
+
+        /* Suit & Bust */
+        .bust {
+            position: absolute;
+            bottom: 0;
+            width: 380px;
+            height: 140px;
+            background: var(--suit-color);
+            border-radius: 130px 130px 0 0;
+            z-index: 2;
+            box-shadow: 0 -5px 30px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+
+        .shirt {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-top: 120px solid var(--collar-color);
+            z-index: 3;
+        }
+
+        .tie {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 140px;
+            background: var(--tie-color);
+            clip-path: polygon(25% 0%, 75% 0%, 100% 75%, 50% 100%, 0% 75%);
+            z-index: 4;
+            box-shadow: 2px 0 6px rgba(0,0,0,0.35);
+        }
+
+        .bust::before, .bust::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 75px;
+            height: 150px;
+            background: #111827;
+            z-index: 5;
+        }
+        .bust::before {
+            left: 55px;
+            transform: rotate(-18deg);
+            border-right: 3px solid #334155;
+        }
+        .bust::after {
+            right: 55px;
+            transform: rotate(18deg);
+            border-left: 3px solid #334155;
+        }
+
+        /* Head Structure */
+        .head {
+            position: absolute;
+            top: 110px;
+            width: 226px;
+            height: 275px;
+            background: linear-gradient(135deg, var(--skin-highlight) 0%, var(--skin-base) 45%, var(--skin-shadow) 100%);
+            border-radius: 113px 113px 105px 105px / 125px 125px 150px 150px;
+            z-index: 10;
+            box-shadow: 
+                0 18px 40px rgba(0, 0, 0, 0.4),
+                inset -6px -8px 18px rgba(168, 85, 45, 0.25),
+                inset 6px 6px 15px rgba(255, 255, 255, 0.35);
+        }
+
+        /* Ears */
+        .ear {
+            position: absolute;
+            top: 70px;
+            width: 34px;
+            height: 70px;
+            background: linear-gradient(to bottom, var(--skin-base), var(--skin-shadow));
+            z-index: 9;
+        }
+        .ear.left {
+            left: -20px;
+            border-radius: 30px 10px 10px 30px;
+            box-shadow: inset 3px 2px 4px rgba(0,0,0,0.15);
+        }
+        .ear.right {
+            right: -20px;
+            border-radius: 10px 30px 30px 10px;
+            box-shadow: inset -3px 2px 4px rgba(0,0,0,0.15);
+        }
+
+        .ear::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            width: 14px;
+            height: 35px;
+            border-radius: 10px;
+            border: 3px solid rgba(168, 85, 45, 0.4);
+        }
+        .ear.left::before { left: 8px; border-right: none; }
+        .ear.right::before { right: 8px; border-left: none; }
+
+        /* ================= FULL LUXURIOUS HAIR ================= */
+        /* Back Hair Outline / Silhouette */
+        .hair-silhouette {
+            position: absolute;
+            top: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 220px;
+            background: var(--hair-dark);
+            border-radius: 130px 130px 80px 80px / 140px 140px 80px 80px;
+            z-index: 8;
+        }
+
+        /* Main Hair Crown - Completely covers head dome */
+        .hair-crown {
+            position: absolute;
+            top: 38px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 254px;
+            height: 115px;
+            background: linear-gradient(170deg, var(--hair-light) 0%, var(--hair-mid) 35%, var(--hair-dark) 85%);
+            border-radius: 130px 140px 40px 40px / 130px 140px 30px 30px;
+            z-index: 25;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Sideburns & Temple volume via pseudo-elements */
+        .hair-crown::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 2px;
+            width: 32px;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--hair-mid), var(--hair-dark));
+            border-radius: 15px 0 10px 30px;
+            transform: rotate(3deg);
+        }
+
+        .hair-crown::after {
+            content: '';
+            position: absolute;
+            top: 35px;
+            right: 2px;
+            width: 32px;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--hair-mid), var(--hair-dark));
+            border-radius: 0 15px 30px 10px;
+            transform: rotate(-3deg);
+        }
+
+        /* Voluminous Front Pompadour Swoop */
+        .hair-pompadour {
+            position: absolute;
+            top: 28px;
+            left: 45%;
+            transform: translateX(-50%);
+            width: 220px;
+            height: 75px;
+            background: linear-gradient(135deg, #6c4731 0%, var(--hair-mid) 40%, var(--hair-dark) 100%);
+            border-radius: 110px 130px 30px 90px;
+            z-index: 26;
+            box-shadow: -4px 6px 12px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Forehead Quiff Strand using pseudo elements */
+        .hair-pompadour::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            right: -10px;
+            width: 140px;
+            height: 65px;
+            background: linear-gradient(160deg, #533623, var(--hair-dark));
+            border-radius: 50px 80px 20px 70px;
+            transform: rotate(8deg);
+        }
+
+        .hair-pompadour::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 30px;
+            width: 120px;
+            height: 38px;
+            background: var(--hair-dark);
+            border-radius: 0 0 20px 40px;
+            transform: rotate(-6deg);
+        }
+
+        /* ================= FACIAL FEATURES ================= */
+        /* Eyebrows */
+        .eyebrows {
+            position: absolute;
+            top: 75px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 26px;
+            z-index: 14;
+        }
+
+        .eyebrows::before,
+        .eyebrows::after {
+            content: '';
+            width: 64px;
+            height: 15px;
+            background: linear-gradient(to bottom, var(--hair-mid), var(--hair-dark));
+            border-radius: 12px 14px 4px 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .eyebrows::before {
+            transform: rotate(6deg);
+            border-top-left-radius: 20px;
+        }
+
+        .eyebrows::after {
+            transform: rotate(-6deg);
+            border-top-right-radius: 20px;
+        }
+
+        .portrait-container:hover .eyebrows::after {
+            transform: translateY(-6px) rotate(-12deg);
+        }
+
+        /* Eyes */
+        .eyes {
+            position: absolute;
+            top: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 36px;
+            z-index: 14;
+        }
+
+        .eye {
+            position: relative;
+            width: 45px;
+            height: 25px;
+            background: #ffffff;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            overflow: hidden;
+            box-shadow: 
+                inset 0 3px 6px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(180, 110, 80, 0.4);
+        }
+
+        .eye::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: 2px;
+            width: 40px;
+            height: 10px;
+            border-top: 2px solid rgba(130, 60, 30, 0.45);
+            border-radius: 50%;
+        }
+
+        .eye::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 12px;
+            width: 21px;
+            height: 21px;
+            background: radial-gradient(circle at 35% 35%, #ffffff 12%, #111 16%, var(--eye-color) 45%, #152b1c 85%);
+            border-radius: 50%;
+            box-shadow: 0 0 3px rgba(0,0,0,0.6);
+        }
+
+        /* Glasses */
+        .glasses {
+            position: absolute;
+            top: 86px;
+            width: 100%;
+            z-index: 16;
+            pointer-events: none;
+        }
+
+        .glasses::before,
+        .glasses::after {
+            content: '';
+            position: absolute;
+            width: 62px;
+            height: 54px;
+            border: 3.5px solid var(--glasses-rim);
+            border-radius: 50% 50% 45% 45%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.05) 40%, rgba(255, 255, 255, 0) 60%);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 0 6px rgba(197, 155, 76, 0.3);
+        }
+
+        .glasses::before { left: 26px; }
+        .glasses::after { right: 26px; }
+
+        .glasses-bridge {
+            position: absolute;
+            top: 105px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32px;
+            height: 12px;
+            border-top: 3.5px solid var(--glasses-rim);
+            border-radius: 50% 50% 0 0;
+            z-index: 17;
+        }
+
+        /* Nose */
+        .nose {
+            position: absolute;
+            top: 115px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 60px;
+            z-index: 15;
+        }
+
+        .nose::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            width: 10px;
+            height: 48px;
+            background: linear-gradient(to right, rgba(168, 85, 45, 0.25), transparent);
+            border-radius: 4px;
+        }
+
+        .nose::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 28px;
+            height: 18px;
+            background: linear-gradient(to bottom, var(--skin-base), var(--skin-shadow));
+            border-radius: 14px;
+            box-shadow: 
+                -8px -2px 0 -3px var(--skin-shadow),
+                8px -2px 0 -3px var(--skin-shadow),
+                0 4px 6px rgba(120, 50, 20, 0.25);
+        }
+
+        /* Handlebar Mustache */
+        .mustache-container {
+            position: absolute;
+            top: 172px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            z-index: 20;
+        }
+
+        .mustache-container::before,
+        .mustache-container::after {
+            content: '';
+            position: absolute;
+            width: 98px;
+            height: 62px;
+            background: radial-gradient(circle at 50% 0%, #4a3424 0%, var(--mustache-color) 60%, var(--hair-dark) 100%);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .mustache-container::before {
+            right: 0;
+            border-radius: 0 90px 10px 90px;
+            transform-origin: right top;
+            transform: rotate(-14deg) skewX(-10deg);
+        }
+
+        .mustache-container::after {
+            left: 0;
+            border-radius: 90px 0 90px 10px;
+            transform-origin: left top;
+            transform: rotate(14deg) skewX(10deg);
+        }
+
+        .portrait-container:hover .mustache-container::before {
+            transform: rotate(-22deg) skewX(-14deg) scale(1.04);
+        }
+        .portrait-container:hover .mustache-container::after {
+            transform: rotate(22deg) skewX(14deg) scale(1.04);
+        }
+
+        /* Mouth & Chin */
+        .mouth-chin {
+            position: absolute;
+            top: 218px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 35px;
+            z-index: 14;
+        }
+
+        .mouth-chin::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 26px;
+            height: 10px;
+            background: linear-gradient(to bottom, #d98877, #be6d5c);
+            border-radius: 0 0 13px 13px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.15);
+        }
+
+        .mouth-chin::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 6px;
+            background: rgba(140, 65, 35, 0.2);
+            border-radius: 50%;
+        }
+
+        /* Label */
+        .badge {
+            position: absolute;
+            bottom: 15px;
+            color: #94a3b8;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portrait-container">
+        <!-- Full Hair Silhouette behind head -->
+        <div class="hair-silhouette"></div>
+
+        <!-- Neck & Suit -->
+        <div class="neck"></div>
+        <div class="bust">
+            <div class="shirt"></div>
+            <div class="tie"></div>
+        </div>
+
+        <!-- Main Head Base -->
+        <div class="head">
+            <!-- Ears -->
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+
+            <!-- Features -->
+            <div class="eyebrows"></div>
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+
+            <!-- Glasses -->
+            <div class="glasses"></div>
+            <div class="glasses-bridge"></div>
+
+            <!-- Nose -->
+            <div class="nose"></div>
+
+            <!-- Handlebar Mustache -->
+            <div class="mustache-container"></div>
+
+            <!-- Mouth & Chin -->
+            <div class="mouth-chin"></div>
+        </div>
+
+        <!-- Full Hair Crown & Styled Quiff covering head dome -->
+        <div class="hair-crown"></div>
+        <div class="hair-pompadour"></div>
+
+        <div class="badge">Pure CSS Gentleman</div>
+    </div>
+
+</body>
+</html>

@@ -39,6 +39,15 @@
         }
         li:not(:hover){
             color:red;
+            background-color: black;
+        }
+        div:has(h2){
+            background-color: black;
+            color: white;
+        }
+        .div:is(p, h3){
+            background-color: darkblue;
+            color: white;
         }
     </style>
 </head>
@@ -66,5 +75,10 @@
         <li>14</li>
         <li>15</li>
     </ul>
+    <div>
+        <h2>Heading</h2>
+        <p>Lorem</p>
+        <h3>Ipsum</h3>
+    </div>
 </body>
 </html>
