@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            height:90vh;
+            width:100vw;
+            background-color: grey;
+        }
+        .container{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin:2%;
+        }
+        .navbar{
+            height: 80px;
+            width: 95vw;
+            background-color: #3841c6ff;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            color:white;
+            list-style: none;
+            border-radius: 20px;
+        }
+        .navbar .logo{
+            font-size: 25px;
+            font-weight: 500;
+            margin-right: 30%;
+            margin-left: 2%;
+        }
+        .navbar ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            width: 50%;
+            margin-right: 2%;
+        }
+        .navbar ul li{
+            font-size: 17px;
+            font-weight: 500;
+        }
+        .navbar .login{
+            height: 40px;
+            width: 100px;
+            border-radius: 20px;
+            color: white;
+            background-color: #0b0d17;
+            margin-right: 1%;
+        }   
+        .navbar ul li:hover{
+            color: grey;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                @TechNova
+            </div>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+            <button class="login">Login</button>
+        </div>
+    </div>
+</body>
+</html>
