@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            display:flex;
+            height: 100vh;
+            width:100%;
+            align-items: center;
+            justify-content: center;
+            gap:20px;
+        }
+        .container1 {
+            background-color: bisque;
+            border: 2px solid black;
+            width: 40vw;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: 
+                "box1 box1 box1" 
+                "box2 box3 box3" 
+                "box2 box3 box3" 
+                "box2 box4 box5" 
+                "box6 box6 box6";
+            grid-auto-rows: minmax(80px, auto);
+            gap: 15px;
+            padding: 20px; 
+            box-sizing: border-box;
+        }
+        .box1 {
+            border:2px solid black;
+        }
+
+        .container2 {
+            background-color: blanchedalmond;
+            border: 2px solid black;
+            width: 40vw;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: 
+                "box1 box1 box2" 
+                "box4 box5 box2" 
+                "box4 box3 box3"
+                "box6 box6 box6" 
+                "box6 box6 box6";
+            grid-auto-rows: minmax(80px, auto);
+            gap: 15px;
+            padding: 20px; 
+            box-sizing: border-box;
+        }
+        .box2 {
+            border:2px solid black;
+        }
+
+        .container3 {
+            background-color: burlywood;
+            border: 2px solid black;
+            width: 40vw;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: 
+                "box1 box1 box1" 
+                "box2 box2 box2" 
+                "box3 box3 box3"
+                "box4 box4 box4" 
+                "box5 box6 box6";
+            grid-auto-rows: minmax(80px, auto);
+            gap: 15px;
+            padding: 20px; 
+            box-sizing: border-box;
+        }
+        .box3 {
+            border:2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <div class="box1" style="grid-area: box1;background-color: red;"></div>
+        <div class="box1" style="grid-area: box2;background-color: yellow"></div>
+        <div class="box1" style="grid-area: box3;background-color: green"></div>
+        <div class="box1" style="grid-area: box4;background-color: blue"></div>
+        <div class="box1" style="grid-area: box5;background-color:aqua"></div>
+        <div class="box1" style="grid-area: box6;background-color:darkorange"></div>
+    </div>
+    <div class="container2">
+        <div class="box2" style="grid-area: box1;background-color: red;"></div>
+        <div class="box2" style="grid-area: box2;background-color: yellow"></div>
+        <div class="box2" style="grid-area: box3;background-color: green"></div>
+        <div class="box2" style="grid-area: box4;background-color: blue"></div>
+        <div class="box2" style="grid-area: box5;background-color:aqua"></div>
+        <div class="box2" style="grid-area: box6;background-color:darkorange"></div>
+    </div>
+    <div class="container3">
+        <div class="box3" style="grid-area: box1;background-color:red"></div>
+        <div class="box3" style="grid-area: box2;background-color:yellow"></div>
+        <div class="box3" style="grid-area: box3;background-color:green"></div>
+        <div class="box3" style="grid-area: box4;background-color:blue"></div>
+        <div class="box3" style="grid-area: box5;background-color:aqua"></div>
+        <div class="box3" style="grid-area: box6;background-color:darkorange"></div>
+    </div>
+</body>
+</html>
