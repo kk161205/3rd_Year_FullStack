@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@theme {
+    --color-coffee-roasted: black;
+    --color-coffee-normal: brown;
+    --color-coffee-light: orange;
+    --color-coffee-espresso:darkred;
+    --color-windy: #000000ff;
+    --color-tree: green;
+    --color-stone: gray;
+    --color-water: blue;
+    --color-fire: orange;
+    --breakpoint-md: 100px;
+    --breakpoint-lg:200px;
+    --breakpoint-xl:300px;
+    --breakpoint-2xl:400px;
+}
+
+button {
+    @apply h-10 w-24 rounded-2xl border border-white/50 text-sm text-white;
+}
+
+.bg-fire {
+    @apply bg-fire;
+}
+
+.bg-water {
+    @apply bg-water;
+}
+.bg-tree {
+    @apply bg-tree;
+}
+.bg-stone {
+    @apply bg-stone;
+}
+.bg-windy {
+    @apply bg-windy;
+}
+.bg-coffee-roasted{
+    @apply bg-coffee-roasted;
+}
+.bg-coffee-normal {
+    @apply bg-coffee-normal;
+}
+.bg-coffee-light {
+    @apply bg-coffee-light;
+}
+.bg-coffee-roasted {
+    @apply bg-coffee-roasted;
+}
+.bg-coffee-espresso {
+    @apply bg-coffee-espresso;
+}
+
+.responsive{
+    @media (width >= --theme(--breakpoint-md)) {
+        @apply bg-windy;
+    }
+    @media (width >= --theme(--breakpoint-lg)) {
+        @apply bg-stone;
+    }
+    @media (width >= --theme(--breakpoint-xl)) {
+        @apply bg-tree;
+    }
+    @media (width >= --theme(--breakpoint-2xl)) {
+        @apply bg-water;
+    }
+}
