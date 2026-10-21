@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Inter;
+}
+
+.container{
+    height: 96vh;
+    width: 98vw;
+    border:2px solid #E2E8F0; 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+}
+
+.logo{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo img{
+    height:40%;
+    width:8%;
+}
+
+.logo span{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+
+.nav{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav ul{
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li{
+    margin: 0 10px;
+    font-size: 15px;
+    font-family: 'Inter';   
+}
+
+.login{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login button{
+    height: 60%;
+    width: 40%; 
+    color: black;
+    border: 2px solid grey;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.get-started{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-started button{
+    height: 60%;
+    width: 40%;
+    background-color: #4F46E5;
+    border: 2px solid grey;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}   

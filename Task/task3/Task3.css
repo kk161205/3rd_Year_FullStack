@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F1F5F9;
+    color: #64748B;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background-color: #0F172A;
+    position: sticky;
+    top: 0;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0 8px;
+    margin-bottom: 30px;
+}
+
+.logo i {
+    color: #2563EB;
+    font-size: 26px;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 6px;
+    color: #CBD5E1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.menu li a i {
+    width: 18px;
+}
+
+.menu li a:hover {
+    background-color: #1E293B;
+}
+
+.menu li a.active {
+    background-color: #4F46E5;
+    color: white;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 8px 0 8px;
+    border-top: 1px solid #1E293B;
+}
+
+.user h4 {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.user p {
+    font-size: 12px;
+    color: #94A3B8;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #D97706;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    flex: 1;
+}
+
+.topbar {
+    height: 64px;
+    background-color: white;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.search {
+    width: 320px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+}
+
+.search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+.topbar_right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.topbar_right i {
+    font-size: 18px;
+    color: #0F172A;
+}
+
+.content {
+    padding: 32px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 24px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.kpi_section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.kpi_icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    margin-bottom: 16px;
+}
+
+.green {
+    background-color: #DCFCE7;
+    color: #16A34A;
+}
+
+.blue {
+    background-color: #DBEAFE;
+    color: #2563EB;
+}
+
+.purple {
+    background-color: #EDE9FE;
+    color: #4F46E5;
+}
+
+.orange {
+    background-color: #FEF3C7;
+    color: #D97706;
+}
+
+.kpi_label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.kpi_number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 8px;
+}
+
+.kpi_change {
+    font-size: 13px;
+}
+
+.kpi_change span {
+    color: #16A34A;
+    font-weight: 600;
+}
+
+.main_analytics {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.bottom_analytics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.card_header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.revenue_total {
+    text-align: right;
+}
+
+.revenue_total strong {
+    display: block;
+    font-size: 18px;
+    color: #0F172A;
+}
+
+.revenue_total span {
+    font-size: 13px;
+    color: #16A34A;
+    font-weight: 600;
+}
+
+.line_chart {
+    width: 100%;
+}
+
+.axis {
+    font-size: 12px;
+    fill: #64748B;
+}
+
+.view_all {
+    color: #4F46E5;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.table_box {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th {
+    text-align: left;
+    font-weight: 500;
+    color: #64748B;
+    padding: 10px 8px;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+td {
+    padding: 13px 8px;
+    color: #0F172A;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.delivered {
+    background-color: #DCFCE7;
+    color: #16A34A;
+}
+
+.processing {
+    background-color: #DBEAFE;
+    color: #2563EB;
+}
+
+.shipped {
+    background-color: #E0F2FE;
+    color: #0284C7;
+}
+
+.cancelled {
+    background-color: #FEE2E2;
+    color: #DC2626;
+}
+
+.up {
+    color: #16A34A;
+    font-weight: 600;
+}
+
+.arrows {
+    display: flex;
+    gap: 14px;
+    font-size: 12px;
+}
+
+.traffic_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.traffic_top h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.traffic_top p {
+    font-size: 13px;
+}
+
+.bars {
+    height: 170px;
+    display: flex;
+    align-items: flex-end;
+    gap: 18px;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.bar {
+    flex: 1;
+    background-color: #3B82F6;
+    border-radius: 6px 6px 0 0;
+}
+
+.bar.dark {
+    background-color: #1D4ED8;
+}
+
+.days {
+    display: flex;
+    gap: 18px;
+    margin-top: 8px;
+}
+
+.days span {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+}
