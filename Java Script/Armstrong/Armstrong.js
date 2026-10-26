@@ -19,7 +19,12 @@ function isArmstrong(val){
 
 function checkArmstrong(){
     let val = Number(document.getElementById("result").value);
-    if(isArmstrong(val)){
+
+    if(val === null || val === undefined){
+        document.getElementById("display").textContent = "Please enter a number";
+    }
+
+    else if(isArmstrong(val)){
         document.getElementById("display").textContent = "Armstrong Number";
     }else{
         document.getElementById("display").textContent = "Not an Armstrong Number";

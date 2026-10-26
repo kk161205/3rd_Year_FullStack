@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1_Quiz</title>
+    <link rel="stylesheet" href="Task1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title-quiz">
+                <h1 id="title-quiz">QUIZ</h1>
+                <span id="live-score">Score: 0</span>
+                <div id="timer">30</div>
+            </div>
+            <div class="progress">
+                <span id="progress-text">Q1/10</span>
+                <div class="progress-bar">
+                    <div id="progress-line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <p id="question"></p>
+            <div class="options">
+                <button id="a" class="option"></button>
+                <button id="b" class="option"></button>
+                <button id="c" class="option"></button>
+                <button id="d" class="option"></button>
+            </div>
+            <p id="explanation"></p>
+            <div class="buttons">
+                <button id="next">Next</button>
+                <button id="restart">Restart</button>
+            </div>
+        </div>
+        <div class="results">
+            <div class="score-section">
+                <p id="score"></p>
+                <p id="rating"></p>
+            </div>
+            <div id="wrong-answers">
+                <button id="review-btn" class="wrong">Check Wrong answers</button>
+            </div>
+        </div>
+        <div class="review-section">
+            <h2 id="review-title">Wrong Answers</h2>
+            <div id="review-list"></div>
+            <button id="back-to-results">Back to Results</button>
+        </div>
+    </div>
+    <script src="Task1.js"></script>
+</body>
+</html>
