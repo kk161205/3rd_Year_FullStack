@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        #score {
+            position: fixed;
+            top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #time-left {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container{
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+            height: 500px;
+            width: 500px;
+            border:1px solid black;
+        }
+        .box{
+            border:1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mole {
+            background: radial-gradient(circle, red 25%, transparent 26%);
+        }
+        .mole:active {
+            background: radial-gradient(circle, green 25%, transparent 26%);
+        }
+    </style>
+</head>
+<body>
+    <p id="score">Score: 0</p>
+    <p id="time-left">Time Left: 10</p>
+    <div class="container">
+        <div class="box" id="0"></div>
+        <div class="box" id="1"></div>
+        <div class="box" id="2"></div>
+        <div class="box" id="3"></div>
+        <div class="box" id="4"></div>
+        <div class="box" id="5"></div>
+        <div class="box" id="6"></div>
+        <div class="box" id="7"></div>
+        <div class="box" id="8"></div>
+    </div>
+    <script src="whack.js"></script>
+</body>
+</html>
